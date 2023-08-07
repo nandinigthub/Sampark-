@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+<style>
+    .form-group {
+        margin: 12px;
+    }
+    input{
+        border: #B00E15  2px solid;
+        border-radius: 5px;
+        /* width: 50%; */
+        margin:10px 0;
+        }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group text-dark">
+        <label for="radiogroup">
+            <h1><u>Templates</u></h1>
+            <p>send different pre designed mails to multiple users at same time<p>
+        </label><br>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <div class="p-2 bd-highlight m-3">
+                        <input type="email" name="email1" placeholder="To: write your recipient"><br>
+                        <p>DEPARTMENT1</p>
+                        <p>this is an email 1 message</p>
+                    </div><label class="btn">
+                        <input type="radio" name="template1" id="template1" autocomplete="off" value="template1">
+                        template1
+                    </label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="p-2 bd-highlight m-3">
+                        <input type="email" name="email2" placeholder="To: write your recipient"><br>
+                        <p>DEPARTMENT2</p>
+                        <p>this is an email 2 message</p>
+                    </div><label class="btn">
+                        <input type="radio" name="template2" id="template2" autocomplete="off" value="template2">
+                        template2
+                    </label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="p-2 bd-highlight m-3">
+                        <input type="email" name="email3" placeholder="To: write your recipient"><br>
+                        <p> DEPARTMENT3</p>
+                        <p>this is an email 3 message</p>
+                    </div> <label class="btn">
+                        <input type="radio" name="template3" id="template3" autocomplete="off" value="template3">
+                        template3
+                    </label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="p-2 bd-highlight m-3">
+                        <input type="email" name="email4" placeholder="To: write your recipient"><br>
+                        <p>DEPARTMENT4</p>
+                        <p>this is an email 4 message</p>
+                    </div> <label class="btn">
+                        <input type="radio" name="template4" id="template4" autocomplete="off" value="template4">
+                        template4
+                    </label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="p-2 bd-highlight m-3">
+                        <input type="email" name="email5" placeholder="To: write your recipient"><br>
+                        <p>DEPARTMENT5</p>
+                        <p>this is an email 5 message</p>
+                    </div> <label class="btn">
+                        <input type="radio" name="template5" id="template5" autocomplete="off" value="template5">
+                        template5
+                    </label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="p-2 bd-highlight m-3">
+                        <input type="email" name="email6" placeholder="To: write your recipient"><br>
+                        <p> DEPARTMENT6</p>
+                        <p>this is an email 6 message</p>
+                    </div> <label class="btn">
+                        <input type="radio" name="template6" id="template6" autocomplete="off" value="template6">
+                        template6
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn m-3">send email</button>
+</form>
+
+{% endblock body %}

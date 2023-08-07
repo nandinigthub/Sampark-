@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% load static %} {% block body %} {% block css %}
+<link rel="stylesheet" type="text/css" href="{% static './css/whtsp.css' %}" />
+{% endblock css %} 
+
+
+<div class="container my-3">
+  <h2>Please Enter Mobile Number and Message</h2>
+  <hr style="margin-bottom:2rem">
+  <form method="POST" action="SendData">
+    {% csrf_token %}
+    <p>Enter Phone Number +91<p>
+    <input type="text" name="Phone" rows="2" placeholder="eg: 83xxxxxxxx"><br>
+    <textarea name="Message"rows="5" placeholder="type your message here"></textarea><br>
+
+    {% if user.is_authenticated %}
+    <input type="Submit" value="Send" id="customerOrder" style = "margin-top: 2rem">
+    {% else %}
+    <input type = "button" value="Send" id="customerOrder"  onclick="myFunction()" style = "margin-top: 2rem">
+    {% endif %}
+    <a href="{% url 'whtsp' %}" class="btn btn-secondary btn-lg ml-5">Clear</a> {{info}}
+</form>
+</div>
+{% endblock body %}

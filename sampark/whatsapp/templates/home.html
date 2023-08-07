@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="hero">
+    <h1>Sampark</h1>
+     <img src="{% static './images/img1.jpeg' %}" alt="">
+    
+    </div>
+    
+    <div class="section1">
+    <div class="left1">
+      <img src="{% static './images/img2.jpeg' %}" alt="">
+    </div>
+    <div class="right1">
+      <h2>About Us</h2>
+      <p>We believe in simplifying communication for organizations of all sizes.<br> We provide a user-friendly web application that enables businesses to effortlessly and incredibly easily to send personalized messages to their target audience through email, SMS, and WhatsApp. We strive to empower our clients with efficient and effective communication tools, helping them connect with their customers in a meaningful and impactful way, saving our time and effort.</p>
+      </p>
+      <button>Read More</button>
+    </div>
+    </div>
+    
+    <div class="section2">
+    
+      <div class="sec2-head">
+        <h2>Your workflow<br>made efficient ↗</h2>
+        <p>Powerful <br>way of sending <br>bulk messages to user</p>
+        
+      </div>
+    <div class="sec2-cards" style= "padding-bottom:2rem">
+      <div class="card1" style= "height: 250px">
+        <img src="{% static './images/f1.jpeg' %}"  style= "height: 250px" alt="">
+        Send bulk messages to multiple recipients
+      </div>
+      <div class="card2" style= "height: 250px">
+        <img src="{% static './images/f2.jpeg' %}" style= "height: 250px" alt="">
+        Easy-to-use web application interface
+      </div>
+      <div class="card3" style= "height: 250px">
+        <img src="{% static './images/f3.jpeg' %}" style= "height: 250px" alt="">
+        Personalize messages with recipient's name and other relevant information
+      </div>
+    </div>
+     </div>
+    
+    
+    <div class="section3">
+     <h2>Our approach</h2>
+     <div class="sec3-cards">
+        <a href="{% url 'whtsp' %}">
+      <div class="card4" >
+        
+        <div class="cont">
+        <h3 >Whatsapp</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore perspiciatis aliquid consequatur facere consequuntur quas quaerat</p>
+       </div>
+        <div >↗</div>
+       </div></a>
+       <a href="{% url 'email' %}">
+      <div class="card5">
+        <div class="cont">
+        <h3>Email</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore perspiciatis aliquid consequatur facere consequuntur quas quaerat</p>
+      </div>  <div>↗</div>
+      </div></a>
+      <a href="{% url 'messenger' %}">
+      <div class="card6">
+        <div class="cont">
+        <h3>SMS</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore perspiciatis aliquid consequatur facere consequuntur quas quaerat</p>
+       </div> <div>↗</div>
+      </div></a>
+     </div>
+    
+    </div>
+
+    {% endblock body %}

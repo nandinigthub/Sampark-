@@ -1,0 +1,77 @@
+{% extends 'base.html' %}  {% load static %} 
+{% load crispy_forms_tags %}
+{% block css %}
+<link rel="stylesheet" type='text/css' href="{% static './user/profile.css' %}"> 
+{% endblock css %}
+ {% block body %}
+{% comment %} 
+<div class="content-section text-dark">
+  <section style="background-color: #198754">
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div
+            class="text-black my-5"
+            style="border-radius: 25px; background: #fff">
+            <div class="p-md-5">
+              <div class="row justify-content-center">
+                <img
+                  class="rounded-circle account-img"
+                  style="width: 20%; height: 20%; padding: 2rem"
+                  src="{{ user.profile.image.url }}" />
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <h2>{{ user.username }}</h2>
+                  <p class="text-secondary">{{ user.email }}</p>
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                      <legend class="border-bottom mb-4">profile info</legend>
+                      {{ u_form | crispy }} {{ p_form | crispy }}
+                    </fieldset>
+                    <div class="form-group py-3">
+                      <button class="btn btn-outline-success" type="submit">
+                        update
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+
+  <div class='signup-container'>
+    <div class='left-container'>
+      <h2>{{ user.username }}</h2>
+      <div class='puppy'>
+        <img
+        class="rounded-circle account-img"
+        style="width: 100%; height: 100%; padding: 2rem"
+        src="{{ user.profile.image.url }}" />
+      </div>
+    </div>
+    <div class='right-container'>
+      <header>
+
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+            {{ u_form | crispy }} {{ p_form | crispy }}
+
+
+
+      </header>
+      <footer>
+        <div class='set'>
+          <button class="btn btn-outline-success" type="submit">
+            update
+          </button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  {% endblock body %} 
+</div>

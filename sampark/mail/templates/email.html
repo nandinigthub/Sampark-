@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% load static %} {% block body %} {% block css %}
+<link rel="stylesheet" type="text/css" href="{% static './css/whtsp.css' %}" />
+<style>
+  body{
+    overflow-x: hidden;
+  }
+  .topnav{
+    margin-top:30px;
+  }
+</style>
+{% endblock css %} 
+
+
+  <div class="contact-us" style="margin-top:30px">
+    <form method="post">
+      {% csrf_token %}
+         <p>To:</p>
+         <p>type comma(",") seperated email addresses to send email to multiple user<p>
+                <input type="text" name="email_list" placeholder="write your recipient"><br>
+                <p>subject:</p>
+                <input type="text" name="subject" placeholder="write your subject here"><br>
+                <p>Enter message:</p>
+                <textarea name="message" placeholder="write your message here" style="height:150px;" ></textarea><br> 
+              
+        {% if user.is_authenticated %}
+        <button class="btn" type="submit" style="margin:10px 0;" > Send Email</button>
+        {% else %}
+        <button class="btn" type="button" style="margin:10px 0;" > Send Email</button>
+        {% endif %}
+        <br><br><br>
+        <div class="border-top pt-3" style="color:black">
+                <small class="text-muted">
+                    Tired to type? send our templates <a class="ml-2" href="{% url 'template' %}" >See Templates</a>
+                </small>
+            </div>
+    
+    </form>
+  </div>
+  {% endblock body %}

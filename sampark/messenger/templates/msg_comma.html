@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% load static %}  {% block css %}
+<link rel="stylesheet" type="text/css" href="{% static './css/whtsp.css' %}" />
+<style>
+  a{
+    text-decoration: none;
+  }
+</style>
+
+{% endblock css %} 
+{% block body %}
+<div class="container my-3">
+  <h2>Please Enter Mobile Number and Message</h2>
+  <hr style="margin-bottom:2rem">
+<form method="POST" action = 'sendsms' enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>type comma(",") seperated phone numbers with +91 to send sms to multiple user<p>
+    <p>since this sms is send using twilio trial account, it sends sms only to verified caller Id's<p>
+    <input type="text" name="phone_number" rows="2" placeholder="ex: +9183xxxxxxxx,+9176xxxxxxxx,+9164xxxxxxxx"><br>
+    <textarea name="message"rows="5" placeholder="type your message here"></textarea><br>
+    {% if user.is_authenticated %}
+    <button class="btn" type="submit" style="margin:10px 0;color: black" > Send SMS</button>
+    {% else %}
+    <button class="btn" type="submit" style="margin:10px 0;color: black" onclick = "myFunction()"> Send Email</button>
+    {% endif %}
+    <br><br><br>
+    <button class="button" ><a href="" ><span>Clear</span></a></button>
+    <button class="button" ><a href="" ><span>UPLOAD CSV</span></a></button>
+</form>
+</div>
+{% endblock body %}
+
+
+
+

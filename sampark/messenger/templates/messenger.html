@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% load static %}  {% block css %}
+<link rel="stylesheet" type="text/css" href="{% static './css/whtsp.css' %}" />
+
+<style>
+  a{
+    text-decoration: none;
+  }
+  
+  .button{
+border : black solid 2x ;
+  }
+
+  div{
+    text-align: center;
+  }
+</style>
+
+
+{% endblock css %} 
+
+{% block body %}
+
+<script src="https://kit.fontawesome.com/ade0b34805.js" crossorigin="anonymous"></script>
+<div class="multi-button">
+  {% comment %} <div>
+
+    <img src="{% static './images/msg.png' %}" alt="">
+  </div> {% endcomment %}
+  <button class="button" ><a href="{% url 'msgcsv' %}" ><span> UPLOAD CSV</span></a></button>
+  <button class="button" ><a href="{% url 'msgcomma' %}"><span> ENTER NUMBERS</span></a></button>
+</div>
+
+{% endblock body %}
+
+
+
+
